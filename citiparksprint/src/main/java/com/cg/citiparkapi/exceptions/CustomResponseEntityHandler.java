@@ -12,12 +12,24 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @RestController
 public class CustomResponseEntityHandler extends ResponseEntityExceptionHandler {
 	
+	/**
+	 * To handle duplicate parking premise exception
+	 * @param ex 
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler
 	public ResponseEntity<Object> handleDuplicateParkingPremiseException(DuplicateParkingPremiseException ex, WebRequest request){
 		DuplicateParkingPremiseExceptionResponse duplicateParkingPremiseExceptionResponse = new DuplicateParkingPremiseExceptionResponse(ex.getMessage());
 		return new ResponseEntity<Object>(duplicateParkingPremiseExceptionResponse,HttpStatus.BAD_REQUEST);
 	}
 	
+	/**
+	 * To handle No such parking premise exception
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler
 	public ResponseEntity<Object> handleNoSuchParkingPremiseException(NoSuchParkingPremiseException ex, WebRequest request){
 		NoSuchParkingPremiseExceptionResponse noSuchParkingPremiseExceptionResponse = new NoSuchParkingPremiseExceptionResponse(ex.getMessage());

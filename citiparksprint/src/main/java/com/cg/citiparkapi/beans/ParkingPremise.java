@@ -16,6 +16,9 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "parkingpremises")
 public class ParkingPremise {
 
+	/**
+	 * Auto generated Id for Parking Premise
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long parkingPremiseId;
@@ -24,6 +27,9 @@ public class ParkingPremise {
 	private String parkingPremiseName;
 	private int numberOfParkingFloors;
 	
+	/**
+	 * Premise Identifier in format P1, P2, etc.
+	 */
 	@NotBlank(message = "Parking Premise Identifier Required")
 	@Column(unique = true, updatable = false, length = 3)
 	private String premiseIdentifier;
@@ -32,11 +38,19 @@ public class ParkingPremise {
 	@JoinColumn(name="address_id")
 	private Address premiseAddress;
 	
+	/**
+	 * Default constructor for parking premise
+	 */
 	public ParkingPremise() {
 	}
 
-	
-
+	/**
+	 * Parameterized constructor for parking premise
+	 * @param parkingPremiseName
+	 * @param numberOfParkingFloors
+	 * @param premiseAddress
+	 * @param premiseIdentifier
+	 */
 	public ParkingPremise(String parkingPremiseName, int numberOfParkingFloors, Address premiseAddress, String premiseIdentifier) {
 		super();
 		this.parkingPremiseName = parkingPremiseName;
@@ -45,7 +59,9 @@ public class ParkingPremise {
 		this.premiseIdentifier = premiseIdentifier;
 	}
 
-
+	/**
+	 * Getters and setters for parking premise class
+	 */
 
 	public long getParkingPremiseId() {
 		return parkingPremiseId;

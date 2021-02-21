@@ -10,6 +10,9 @@ import javax.persistence.Table;
 @Table(name = "addresses")
 public class Address {
 
+	/**
+	 * Auto generated Id of address
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int addressId;
@@ -17,15 +20,28 @@ public class Address {
 	private String state;
 	private String pin;
 	
+	/**
+	 * Default constructor for address
+	 */
 	public Address() {
 	}
 
+	/**
+	 * Parameterized constructor for address
+	 * @param city
+	 * @param state
+	 * @param pin
+	 */
 	public Address(String city, String state, String pin) {
 		super();
 		this.city = city;
 		this.state = state;
 		this.pin = pin;
 	}
+	
+	/**
+	 * Getters and Setters for address class
+	 */
 
 	public int getAddressId() {
 		return addressId;

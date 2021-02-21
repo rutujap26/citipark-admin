@@ -11,9 +11,18 @@ public class NoSuchParkingPremiseException extends RuntimeException {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Default constructor for No such parking premise exception.
+	 */
 	public NoSuchParkingPremiseException() {
 		super();
 	}
+	
+	/**
+	 * Constructor with string error message.
+	 * No such parking premise exception will pass error messege to super class.
+	 * @param errMsg
+	 */
 	public NoSuchParkingPremiseException(String errMsg) {
 		super(errMsg);
 	}

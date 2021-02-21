@@ -65,14 +65,7 @@ public class AdminServiceImpl implements AdminService {
 			return parkingPremiseRepository.save(parkingPremise);
 		return null;
 	}
-//	
-//	@Override
-//	public void deleteParkingPremise(String premiseIdentifier) {
-//		ParkingPremise premise = parkingPremiseRepository.findbyPremiseIdentifier(premiseIdentifier.toUpperCase());
-//		if(premise==null)
-//			throw new NoSuchParkingPremiseException("Parking Premise with Id: "+premiseIdentifier+" does not exists");
-//		parkingPremiseRepository.delete(premise);
-//	}
+	
 	@Override
 	public boolean deleteParkingPremise(String premiseIdentifier) {
 		ParkingPremise premise = parkingPremiseRepository.findbyPremiseIdentifier(premiseIdentifier.toUpperCase());
