@@ -84,11 +84,4 @@ public class AdminServiceTest {
 		assertEquals(2, adminService.readAllParkingPremises().size());
 	}
 	
-	@Test
-	public void testForUpdateParkingPremise() {
-		Address address = new Address("pune", "MH", "411006");
-		ParkingPremise premise = new ParkingPremise("pre1", 3, address, "P1");
-		when(parkingPremiseRepository.save(premise)).thenReturn(premise);
-	}
-	
 }
