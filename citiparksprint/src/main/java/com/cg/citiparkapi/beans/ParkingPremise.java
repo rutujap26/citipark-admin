@@ -31,7 +31,7 @@ public class ParkingPremise {
 	 * Premise Identifier in format P1, P2, etc.
 	 */
 	@NotBlank(message = "Parking Premise Identifier Required")
-	@Column(unique = true, updatable = false, length = 3)
+	@Column(unique = true, updatable = false)
 	private String premiseIdentifier;
 	
 	@OneToOne (targetEntity = Address.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
